@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FeatureCard from "@/components/FeatureCard";
 
 const interSans = Inter({
   variable: "--font-inter-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <Header />
+        <FeatureCard />
         {children}
         <Footer />
       </body>
