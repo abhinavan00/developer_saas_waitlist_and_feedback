@@ -13,7 +13,7 @@ export default function Header() {
             <Image className={`md:w-40`} src={mobileLogo} alt='Logo' />
             <button 
                 className={`
-                    bg-[#10F07A] text-[#006830] text-sm font-mono font-medium 
+                    bg-[#10F07A] text-[#006830] text-sm font-mono font-bold
                     py-2 px-4 rounded-lg drop-shadow-2xl cursor-pointer 
                     hover:bg-[#63FF94] hover:drop-shadow-lg hover:drop-shadow-[#63FF94]/20
                     md:text-lg
