@@ -10,6 +10,7 @@ import featureIcon01 from '@/public/icon_01.svg';
 import featureIcon02 from '@/public/icon_02.svg'; 
 import featureIcon03 from '@/public/icon_03.svg'; 
 import cummunityDrivenIcon from '@/public/cummunity-driven-icon.svg';
+import exploreFeedbackBtnArrow from '@/public/explore-feedback-btn-arrow.svg';
 
 export default function Home() {
   return (
@@ -124,10 +125,10 @@ export default function Home() {
       </section>
 
       {/*------ SECTION:- FEATURES ------*/}
-      <section className={`mt-16 flex flex-col items-center gap-4`}>
+      <section className={`mt-16 flex flex-col items-center gap-2`}>
         <p className={`font-mono text-sm text-[#10F07A]`}>ZERO OVERHEAD</p>
         <p className={`font-bold text-3xl text-center md:text-4xl`}>Everything you need to ship fearlessly</p>
-        <div className={`flex flex-col gap-4 md:flex-row`}>
+        <div className={`flex flex-col gap-4 mt-4 md:flex-row`}>
           <FeatureCard 
             icon={featureIcon01}
             heading='Sub-Millisecond Tracing'
@@ -147,7 +148,7 @@ export default function Home() {
       </section>
 
         {/*----- SECTION:- FEEDBACK BOARD TEASER BANNER -----*/}
-        <section className={`bg-[#292A2C] mt-8`}>
+        <section className={`bg-[#292A2C] p-4 mt-8 rounded-lg flex flex-col gap-2`}>
           <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
             <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
             COMMUNITY DRIVEN
@@ -158,9 +159,14 @@ export default function Home() {
             triage, and runtime integrations.
           </p>
           <button 
-            className={`font-mono font-medium text-[#B4FFC0] bg-[#0D0E10]`}
+            className={`
+              font-mono font-medium text-[#B4FFC0] bg-[#0D0E10] w-full py-4 rounded-lg
+              flex items-center justify-center gap-2 cursor-pointer hover:gap-3 hover:shadow-lg
+              hover:shadow-[#0D0E10]/30
+            `}
           >
             Explore Feedback Board
+            <Image src={exploreFeedbackBtnArrow} alt='button arrow icon' className={``} />
           </button>
         </section>
     </main>
