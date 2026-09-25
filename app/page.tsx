@@ -8,7 +8,7 @@ export default function Home() {
     <main className={`font-sans p-4`}>
 
       {/*----- HERO SECTION ------*/}
-      <section>
+      <section className={`flex flex-col items-center`}>
         {/*----- LIVE STATUS PILL ------*/}
         <p 
           className={`
@@ -21,19 +21,19 @@ export default function Home() {
         </p>
 
         {/*---- HEADING & SUBHEADING -----*/}
-        <h1 className={`text-5xl font-bold text-center`}>
+        <h1 className={`text-5xl font-bold text-center max-w-200`}>
           The developer
           observability suite built for 
           <span className={`text-[#10F07A]`}> rapid engineering.</span>
         </h1>
-        <p className={`text-[#BACBB9] text-center mt-4`}>
+        <p className={`text-[#BACBB9] text-center mt-4 max-w-155`}>
           Unified distributed tracing, real-time edge
           telemetry, and automated incident triage inside
           a singular fast terminal control plane.
         </p>
 
         {/*----- WAITLIST FORM -----*/}
-        <Form action={'/'} className={`my-6 md:w-125`}>
+        <Form action={'/'} className={`my-6 w-full max-w-125`}>
             <label htmlFor='email' className={`relative`}>
               <Image 
                 src={emailIcon} alt='email icon' 
