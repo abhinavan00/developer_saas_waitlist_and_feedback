@@ -14,7 +14,7 @@ import exploreFeedbackBtnArrow from '@/public/explore-feedback-btn-arrow.svg';
 
 export default function Home() {
   return (
-    <main className={`font-sans p-4`}>
+    <main className={`font-sans p-4 lg:px-14`}>
 
       {/*----- SECTION:- HERO ------*/}
       <section className={`flex flex-col items-center`}>
@@ -22,11 +22,13 @@ export default function Home() {
         {/*----- LIVE STATUS PILL ------*/}
         <p 
           className={`
-            font-mono text-[#B4FFC0] text-sm bg-[#292A2C] w-110 py-1 px-2 mt-8 mb-6 rounded-3xl
+            font-mono text-[#B4FFC0] text-xs bg-[#292A2C] max-w-110 py-1 px-4 mt-8 mb-6 rounded-3xl
             flex items-center justify-center gap-2
           `}
         >
-          <span className={`inline-block w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></span>
+          <span className={`inline-block w-2.5 h-2.5 bg-[#10F07A] rounded-4xl relative`}>
+            <span className={`absolute w-2.5 h-2.5 bg-[#10F07A] rounded-4xl animate-ping`}></span>
+          </span>
           DevPulse v0.8 Preview • Public Waitlist Open
         </p>
 
@@ -94,7 +96,9 @@ export default function Home() {
             <p className={`text-sm text-[#BACBB9]`}>bash — devpulse-node-01</p>
           </div>
           <p className={`text-[#B4FFC0] text-sm flex items-center gap-1.5`}>
-            <span className={`w-2 h-2 bg-[#B4FFC0] rounded-4xl`}></span>0.14ms
+            <span className={`w-2 h-2 bg-[#B4FFC0] rounded-4xl relative`}>
+              <span className={`absolute w-2 h-2 bg-[#B4FFC0] rounded-4xl animate-ping`}></span>
+            </span>0.14ms
           </p>
         </div>
 

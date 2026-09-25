@@ -22,7 +22,7 @@ export default function Footer() {
                     flex justify-center items-center gap-2
                 `}
                 >
-                    <span className={`inline-block w-3 h-3 bg-[#10F07A] rounded-4xl`}></span> 
+                    <span className={`inline-block w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></span> 
                     All systems operational
                 </p>
             </div> 
