@@ -16,7 +16,7 @@ export default function Home() {
             flex items-center justify-center gap-2
           `}
         >
-          <span><div className={`w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></div></span>
+          <span className={`w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></span>
           DevPulse v0.8 Preview • Public Waitlist Open
         </p>
 
