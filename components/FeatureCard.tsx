@@ -1,11 +1,15 @@
 import Image from "next/image";
-import icon01 from '@/public/icon_01.svg';
+import type { StaticImageData } from 'next/image';
 
-export default function FeatureCard() {
+export default function FeatureCard({icon, heading, subheading}:{
+  icon:string | StaticImageData, 
+  heading:string, 
+  subheading:string  
+}) {
     return (
         <div
             className={`
-                bg-[#1B1C1E] w-[90%] p-4 rounded-lg font-sans
+                bg-[#1B1C1E] p-4 rounded-lg font-sans
                 relative
             `}
         >   
@@ -15,14 +19,11 @@ export default function FeatureCard() {
                     absolute
                 `}
             >
-                <Image src={icon01} alt='feature icon'/>
+                <Image src={icon} alt='feature icon'/>
             </div>
             <div className={`mt-14`}>
-                <p className={`text-2xl font-bold`}>Sub-Millisecond Tracing</p>
-                <p className={`text-md text-[#BACBB9]`}>
-                    Hardware-accelerated ring buffers stream traces
-                    with less than 150µs CPU overhead.
-                </p>
+                <p className={`text-2xl font-bold`}>{heading}</p>
+                <p className={`text-md text-[#BACBB9]`}>{subheading}</p>
             </div>
         </div>
     )

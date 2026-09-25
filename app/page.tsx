@@ -5,12 +5,17 @@ import btnArrowIcon from '@/public/btn-arrow-icon.svg';
 import windowControlBtnsIcon from '@/public/window-control-btns.svg';
 import terminalIcon from '@/public/terminal-icon.svg';
 import terminalTickIcon from '@/public/terminal-tick-icon.svg';
+import FeatureCard from '@/components/FeatureCard';
+import featureIcon01 from '@/public/icon_01.svg'; 
+import featureIcon02 from '@/public/icon_02.svg'; 
+import featureIcon03 from '@/public/icon_03.svg'; 
+import cummunityDrivenIcon from '@/public/cummunity-driven-icon.svg';
 
 export default function Home() {
   return (
     <main className={`font-sans p-4`}>
 
-      {/*----- HERO SECTION ------*/}
+      {/*----- SECTION:- HERO ------*/}
       <section className={`flex flex-col items-center`}>
 
         {/*----- LIVE STATUS PILL ------*/}
@@ -72,7 +77,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/*------ TERMINAL PREVIEW SECTION ------*/}
+      {/*------ SECTION:- TERMINAL PREVIEW  ------*/}
       <section 
         className={`
           font-mono mt-10 bg-[#0D0E10] rounded-lg drop-shadow-xl drop-shadow-[#000000]/10 max-w-220
@@ -117,6 +122,47 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {/*------ SECTION:- FEATURES ------*/}
+      <section className={`flex flex-col items-center gap-4`}>
+        <p className={`font-mono text-sm text-[#10F07A]`}>ZERO OVERHEAD</p>
+        <p className={`font-bold text-3xl text-center`}>Everything you need to ship fearlessly</p>
+        <div className={`flex flex-col gap-4`}>
+          <FeatureCard 
+            icon={featureIcon01}
+            heading='Sub-Millisecond Tracing'
+            subheading='Hardware-accelerated ring buffers stream traces with less than 150µs CPU overhead.' 
+          />
+          <FeatureCard 
+            icon={featureIcon02}
+            heading='CLI-First Workflows'
+            subheading='One-liner instrumentation for Bun, Node, Go, Rust, and Python without invasive SDK code.'
+          />
+          <FeatureCard 
+            icon={featureIcon03}
+            heading='Deterministic Root Cause'
+            subheading='Correlates diffs, panic logs, and runtime metrics directly to offending PR lines.'
+          />
+        </div>
+      </section>
+
+        {/*----- SECTION:- FEEDBACK BOARD TEASER BANNER -----*/}
+        <section className={`bg-[#292A2C]`}>
+          <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
+            <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
+            COMMUNITY DRIVEN
+          </p>
+          <p className={`text-2xl font-semibold`}>Shape the DevPulse roadmap</p>
+          <p className={`text-[#BACBB9]`}>
+            Vote on upcoming eBPF telemetry hooks, AI
+            triage, and runtime integrations.
+          </p>
+          <button 
+            className={`font-mono font-medium text-[#B4FFC0] bg-[#0D0E10]`}
+          >
+            Explore Feedback Board
+          </button>
+        </section>
     </main>
   );
 }
