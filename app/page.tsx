@@ -9,6 +9,7 @@ export default function Home() {
 
       {/*----- HERO SECTION ------*/}
       <section className={`flex flex-col items-center`}>
+
         {/*----- LIVE STATUS PILL ------*/}
         <p 
           className={`
@@ -61,6 +62,11 @@ export default function Home() {
               <span><Image src={btnArrowIcon} alt='button arrow icon'/></span>
             </button>
         </Form>
+
+        {/*---- SOCIAL PROOF ----*/}
+        <p className={`font-mono font-medium text-sm text-[#BACBB9]`}>
+          Over <span className={`text-white`}>3,400+</span> developers waiting
+        </p>
       </section>
     </main>
   );
