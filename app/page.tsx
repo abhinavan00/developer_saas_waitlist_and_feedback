@@ -20,7 +20,7 @@ export default function Home() {
             flex items-center justify-center gap-2
           `}
         >
-          <span className={`w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></span>
+          <span className={`inline-block w-2.5 h-2.5 bg-[#10F07A] rounded-4xl`}></span>
           DevPulse v0.8 Preview • Public Waitlist Open
         </p>
 
@@ -73,7 +73,12 @@ export default function Home() {
       </section>
 
       {/*------ TERMINAL PREVIEW SECTION ------*/}
-      <section className={`font-mono mt-10`}>
+      <section 
+        className={`
+          font-mono mt-10 bg-[#0D0E10] rounded-lg 
+          drop-shadow-xl drop-shadow-[#000000]/10
+        `}
+      >
 
         {/*----- TERMINAL HEADER BAR -----*/}
         <div className={`bg-[#292A2C] flex justify-between px-3.5 py-2.5 rounded-t-lg`}>
@@ -83,16 +88,32 @@ export default function Home() {
             <p className={`text-sm text-[#BACBB9]`}>bash — devpulse-node-01</p>
           </div>
           <p className={`text-[#B4FFC0] text-sm flex items-center gap-1.5`}>
-            <div className={`w-2 h-2 bg-[#B4FFC0] rounded-4xl`}></div>0.14ms
+            <span className={`w-2 h-2 bg-[#B4FFC0] rounded-4xl`}></span>0.14ms
           </p>
         </div>
 
         {/*----- TERMINAL BODY -----*/}
-        <div>
-          <p><span>$</span>npx devpulse init --preset=production</p>
-          <p>
-            <Image src={terminalTickIcon} alt='tick icon' />
-            Detected 4 microservices <span>(Node, Go, Bun)</span>
+        <div className={`p-4 my-3 flex flex-col gap-4`}>
+          <p className={`font-medium`}><span className={`text-[#B4FFC0] font-bold mr-2`}>$</span>npx devpulse init --preset=production</p>
+          <p className={`flex gap-2 text-[#BACBB9]`}>
+            <Image src={terminalTickIcon} alt='tick icon' className={`w-3`} />
+            Detected 4 microservices <span className={`text-[#00E473]`}>(Node, Go, Bun)</span>
+          </p>
+          <p className={`flex gap-2 text-[#BACBB9]`}>
+            <Image src={terminalTickIcon} alt='tick icon' className={`w-3`} />
+            Zero-overhead eBPF tracing hook active
+          </p>
+          <div className={` text-[#BACBB9] relative`}>
+            <Image src={terminalTickIcon} alt='tick icon' className={`w-3 absolute top-1`} />
+            <p className={`pl-5`}>
+              Streaming live telemetry to local control
+              plane at <span className={`underline text-[#4CD7F6]`}>http://localhost:4040</span>
+            </p>    
+          </div>
+          <p className={`text-[#849584] flex items-center`}>
+            <span className={`text-[#10F07A] text-sm font-bold mr-2`}>˃</span>
+            Listening for edge events
+            <span className={`w-2 h-4 bg-[#10F07A] inline-block ml-2`}></span>
           </p>
         </div>
       </section>
