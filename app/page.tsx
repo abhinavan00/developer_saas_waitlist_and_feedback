@@ -2,6 +2,9 @@ import Form from 'next/form';
 import Image from 'next/image';
 import emailIcon from '@/public/email-icon.svg';
 import btnArrowIcon from '@/public/btn-arrow-icon.svg';
+import windowControlBtnsIcon from '@/public/window-control-btns.svg';
+import terminalIcon from '@/public/terminal-icon.svg';
+import terminalTickIcon from '@/public/terminal-tick-icon.svg';
 
 export default function Home() {
   return (
@@ -13,7 +16,7 @@ export default function Home() {
         {/*----- LIVE STATUS PILL ------*/}
         <p 
           className={`
-            font-mono text-[#B4FFC0] text-sm bg-[#292A2C] w-110 p-2 mt-8 mb-6 rounded-3xl
+            font-mono text-[#B4FFC0] text-sm bg-[#292A2C] w-110 py-1 px-2 mt-8 mb-6 rounded-3xl
             flex items-center justify-center gap-2
           `}
         >
@@ -34,7 +37,7 @@ export default function Home() {
         </p>
 
         {/*----- WAITLIST FORM -----*/}
-        <Form action={'/'} className={`my-6 w-full max-w-125`}>
+        <Form action={'/'} className={`mt-6 w-full max-w-125`}>
             <label htmlFor='email' className={`relative`}>
               <Image 
                 src={emailIcon} alt='email icon' 
@@ -64,9 +67,34 @@ export default function Home() {
         </Form>
 
         {/*---- SOCIAL PROOF ----*/}
-        <p className={`font-mono font-medium text-sm text-[#BACBB9]`}>
+        <p className={`font-mono font-medium text-sm text-[#BACBB9] mt-3.5`}>
           Over <span className={`text-white`}>3,400+</span> developers waiting
         </p>
+      </section>
+
+      {/*------ TERMINAL PREVIEW SECTION ------*/}
+      <section className={`font-mono mt-10`}>
+
+        {/*----- TERMINAL HEADER BAR -----*/}
+        <div className={`bg-[#292A2C] flex justify-between px-3.5 py-2.5 rounded-t-lg`}>
+          <Image src={windowControlBtnsIcon} alt='Window control buttons icon'/>
+          <div className={`flex gap-2`}>
+            <Image className={`w-3.5`} src={terminalIcon} alt='Terminal Icon'/>
+            <p className={`text-sm text-[#BACBB9]`}>bash — devpulse-node-01</p>
+          </div>
+          <p className={`text-[#B4FFC0] text-sm flex items-center gap-1.5`}>
+            <div className={`w-2 h-2 bg-[#B4FFC0] rounded-4xl`}></div>0.14ms
+          </p>
+        </div>
+
+        {/*----- TERMINAL BODY -----*/}
+        <div>
+          <p><span>$</span>npx devpulse init --preset=production</p>
+          <p>
+            <Image src={terminalTickIcon} alt='tick icon' />
+            Detected 4 microservices <span>(Node, Go, Bun)</span>
+          </p>
+        </div>
       </section>
     </main>
   );
