@@ -124,10 +124,10 @@ export default function Home() {
       </section>
 
       {/*------ SECTION:- FEATURES ------*/}
-      <section className={`flex flex-col items-center gap-4`}>
+      <section className={`mt-16 flex flex-col items-center gap-4`}>
         <p className={`font-mono text-sm text-[#10F07A]`}>ZERO OVERHEAD</p>
-        <p className={`font-bold text-3xl text-center`}>Everything you need to ship fearlessly</p>
-        <div className={`flex flex-col gap-4`}>
+        <p className={`font-bold text-3xl text-center md:text-4xl`}>Everything you need to ship fearlessly</p>
+        <div className={`flex flex-col gap-4 md:flex-row`}>
           <FeatureCard 
             icon={featureIcon01}
             heading='Sub-Millisecond Tracing'
@@ -147,7 +147,7 @@ export default function Home() {
       </section>
 
         {/*----- SECTION:- FEEDBACK BOARD TEASER BANNER -----*/}
-        <section className={`bg-[#292A2C]`}>
+        <section className={`bg-[#292A2C] mt-8`}>
           <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
             <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
             COMMUNITY DRIVEN
