@@ -75,13 +75,13 @@ export default function Home() {
       {/*------ TERMINAL PREVIEW SECTION ------*/}
       <section 
         className={`
-          font-mono mt-10 bg-[#0D0E10] rounded-lg 
-          drop-shadow-xl drop-shadow-[#000000]/10
+          font-mono mt-10 bg-[#0D0E10] rounded-lg drop-shadow-xl drop-shadow-[#000000]/10 max-w-220
+          mx-auto
         `}
       >
 
         {/*----- TERMINAL HEADER BAR -----*/}
-        <div className={`bg-[#292A2C] flex justify-between px-3.5 py-2.5 rounded-t-lg`}>
+        <div className={`bg-[#292A2C] flex justify-between px-3.5 py-2.5 rounded-t-lg w-full`}>
           <Image src={windowControlBtnsIcon} alt='Window control buttons icon'/>
           <div className={`flex gap-2`}>
             <Image className={`w-3.5`} src={terminalIcon} alt='Terminal Icon'/>
