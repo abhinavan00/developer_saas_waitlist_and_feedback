@@ -148,21 +148,23 @@ export default function Home() {
       </section>
 
         {/*----- SECTION:- FEEDBACK BOARD TEASER BANNER -----*/}
-        <section className={`bg-[#292A2C] p-4 mt-8 rounded-lg flex flex-col gap-2`}>
-          <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
-            <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
-            COMMUNITY DRIVEN
-          </p>
-          <p className={`text-2xl font-semibold`}>Shape the DevPulse roadmap</p>
-          <p className={`text-[#BACBB9]`}>
-            Vote on upcoming eBPF telemetry hooks, AI
-            triage, and runtime integrations.
-          </p>
+        <section className={`bg-[#292A2C] p-4 mt-8 rounded-lg flex flex-col gap-2 md:flex-row md:items-center md:justify-between`}>
+          <div className={`flex flex-col gap-2 max-w-125`}>
+            <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
+              <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
+              COMMUNITY DRIVEN
+            </p>
+            <p className={`text-2xl font-semibold`}>Shape the DevPulse roadmap</p>
+            <p className={`text-[#BACBB9]`}>
+              Vote on upcoming eBPF telemetry hooks, AI
+              triage, and runtime integrations.
+            </p>
+          </div>
           <button 
             className={`
               font-mono font-medium text-[#B4FFC0] bg-[#0D0E10] w-full py-4 rounded-lg
               flex items-center justify-center gap-2 cursor-pointer hover:gap-3 hover:shadow-lg
-              hover:shadow-[#0D0E10]/30
+              hover:shadow-[#0D0E10]/30 md:w-90
             `}
           >
             Explore Feedback Board
