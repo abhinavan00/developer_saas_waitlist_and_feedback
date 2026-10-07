@@ -152,7 +152,12 @@ export default function Home() {
       </section>
 
         {/*----- SECTION:- FEEDBACK BOARD TEASER BANNER -----*/}
-        <section className={`bg-[#292A2C] p-4 mt-8 rounded-lg flex flex-col gap-2 md:flex-row md:items-center md:justify-between`}>
+        <section 
+          className={`
+            bg-[#292A2C] p-4 mt-8 rounded-lg flex flex-col gap-2
+            md:flex-row md:items-center md:justify-between
+          `}
+        >
           <div className={`flex flex-col gap-2 max-w-125`}>
             <p className={`font-mono text-sm text-[#B4FFC0] flex items-center gap-2`}>
               <Image src={cummunityDrivenIcon} alt='cummunity driven icon' className={`w-5`}/>
