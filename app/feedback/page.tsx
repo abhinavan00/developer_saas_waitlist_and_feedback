@@ -70,6 +70,15 @@ export default function Feedback() {
                     <FilterBtn>Integrations</FilterBtn>
                 </div>
             </section>
+
+            {/* FEEDBACK SECTION */}
+            <section className={`mt-8 flex flex-col gap-3`}>
+                <FeedbackCard />
+                <FeedbackCard />
+                <FeedbackCard />
+                <FeedbackCard />
+                <FeedbackCard />
+            </section>
         </main>
     )
 }
