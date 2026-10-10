@@ -4,10 +4,11 @@ import StatusPill from "@/components/StatusPill";
 import FilterBtn from "@/components/FilterBtn";
 import FeedbackCard from "@/components/FeedbackCard";
 import searchIcon from '@/public/search-icon.svg';
+import releaseCandenceIcon from '@/public/release-candence-icon.svg';
 
 export default function Feedback() {
     return (
-        <main className={`p-4`}>
+        <main className={`p-4 md:p-8 lg:px-12`}>
             {/* HEADING */}
             <section className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between`}>
                 <div className={`flex flex-col gap-2`}>
@@ -78,6 +79,23 @@ export default function Feedback() {
                 <FeedbackCard />
                 <FeedbackCard />
                 <FeedbackCard />
+            </section>
+
+            {/* RELEASE CANDENCE */}
+            <section className={`bg-[#0D0E10] mt-8 py-4 px-3 rounded-lg flex flex-col gap-3`}>
+                <div className={`font-mono font-medium flex gap-2`}>
+                    <Image src={releaseCandenceIcon} alt="icon" />
+                    <p>Bi-weekly Release Cadence</p>
+                </div>
+                <p className={`text-sm text-[#BACBB9] `}>
+                    Roadmap items marked In Progress ship to production on
+                    every alternate Thursday at 14:00 UTC. Upvote and join
+                    community discussions to help prioritize sprints.
+                </p>
+                <div className={`font-mono text-sm flex justify-between`}>
+                    <p className={`text-[#849584]`}>Sprint 26 closes in 4 days</p>
+                    <p className={`text-[#B4FFC0]`}>v1.14.0 target</p>
+                </div>
             </section>
         </main>
     )
