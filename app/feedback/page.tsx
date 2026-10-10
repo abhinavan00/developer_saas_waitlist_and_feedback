@@ -1,9 +1,14 @@
+import Form from "next/form";
+import Image from "next/image";
 import StatusPill from "@/components/StatusPill";
+import FilterBtn from "@/components/FilterBtn";
 import FeedbackCard from "@/components/FeedbackCard";
+import searchIcon from '@/public/search-icon.svg';
 
 export default function Feedback() {
     return (
         <main className={`p-4`}>
+            {/* HEADING */}
             <section className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between`}>
                 <div className={`flex flex-col gap-2`}>
                     <div className={`font-mono text-xs text-[#B4FFC0] flex items-center gap-1.5`}>
@@ -28,11 +33,42 @@ export default function Feedback() {
                 </button>
             </section>
             
+            {/* STATUS PILL */}
             <section className={`w-full overflow-x-auto mt-6 flex items-center gap-2 md:mt-8`}>
                 <StatusPill status="under-review">Under Review</StatusPill>
                 <StatusPill status="planned">Planned</StatusPill>
                 <StatusPill status="in-progress">In Progress</StatusPill>
                 <StatusPill status="shipped">Shipped</StatusPill>
+            </section>
+            
+            {/* SEARCH AND FILTER */}   
+            <section className={`mt-6 lg:flex lg:flex-row-reverse lg:justify-between`}>
+                <Form action={'/feedback'}>
+                    <label htmlFor="search feedback" className={`relative`}>  
+                        <Image 
+                            src={searchIcon} 
+                            alt="search icon" 
+                            className={`w-5 absolute -top-0.5 left-2.5`} 
+                        />  
+                        <input 
+                            type="text"
+                            name="feedback"
+                            placeholder="Search Feedback..."
+                            className={`
+                                bg-[#0D0E10] w-full py-4 pl-10 rounded-lg shadow-2xl
+                                placeholder:text-[#849584] placeholder:text-lg focus:outline-none
+                                cursor-text
+                                lg:w-125
+                            `}
+                        />
+                    </label>    
+                </Form>
+                <div className={`mt-2 flex gap-2`}>
+                    <FilterBtn>All</FilterBtn>
+                    <FilterBtn>Features</FilterBtn>
+                    <FilterBtn>Bugs</FilterBtn>
+                    <FilterBtn>Integrations</FilterBtn>
+                </div>
             </section>
         </main>
     )
