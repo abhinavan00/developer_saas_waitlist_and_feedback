@@ -4,7 +4,7 @@ import FeedbackCard from "@/components/FeedbackCard";
 export default function Feedback() {
     return (
         <main className={`p-4`}>
-            <div className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between`}>
+            <section className={`flex flex-col gap-4 md:flex-row md:items-end md:justify-between`}>
                 <div className={`flex flex-col gap-2`}>
                     <div className={`font-mono text-xs text-[#B4FFC0] flex items-center gap-1.5`}>
                         <div className={`w-2.5 h-2.5 bg-[#10F07A] rounded-full`}></div>
@@ -26,7 +26,14 @@ export default function Feedback() {
                 >
                     <span className={`text-2xl font-normal`}>+</span> Submit Feedback
                 </button>
-            </div>
+            </section>
+            
+            <section className={`w-full overflow-x-auto mt-6 flex items-center gap-2 md:mt-8`}>
+                <StatusPill status="under-review">Under Review</StatusPill>
+                <StatusPill status="planned">Planned</StatusPill>
+                <StatusPill status="in-progress">In Progress</StatusPill>
+                <StatusPill status="shipped">Shipped</StatusPill>
+            </section>
         </main>
     )
 }
