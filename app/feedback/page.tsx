@@ -2,6 +2,7 @@ import Form from "next/form";
 import Image from "next/image";
 import StatusPill from "@/components/StatusPill";
 import FilterBtn from "@/components/FilterBtn";
+import { feedbacks } from "@/lib/data/feedbacks";
 import FeedbackCard from "@/components/FeedbackCard";
 import searchIcon from '@/public/search-icon.svg';
 import releaseCandenceIcon from '@/public/release-candence-icon.svg';
@@ -74,11 +75,20 @@ export default function Feedback() {
 
             {/* FEEDBACK SECTION */}
             <section className={`mt-8 flex flex-col gap-3`}>
-                <FeedbackCard />
-                <FeedbackCard />
-                <FeedbackCard />
-                <FeedbackCard />
-                <FeedbackCard />
+                {
+                    feedbacks.map(feedback => 
+                        <FeedbackCard 
+                            key={feedback.id}
+                            title={feedback.title}
+                            description={feedback.description}
+                            userName={feedback.userName}
+                            category={feedback.category}
+                            status={feedback.status}
+                            upvotes={feedback.upvotes}
+                            createdAt={feedback.createdAt}
+                        />
+                    )
+                }
             </section>
 
             {/* RELEASE CANDENCE */}

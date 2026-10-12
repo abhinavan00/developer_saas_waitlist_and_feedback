@@ -4,9 +4,9 @@ type Feedback = {
     description: string,
     userName: string,
     category: 'bug' | 'feature' | 'enhancement',
-    status: 'planned' | 'under-review' | 'in-progress' | 'shipped',
+    status: 'Submitted' | 'under-review' | 'planned' | 'in-progress' | 'shipped',
     upvotes: number,
-    createdAt: string | Date 
+    createdAt: string
 }
 
 export const feedbacks: Feedback[] = [
@@ -18,7 +18,7 @@ export const feedbacks: Feedback[] = [
         category: 'feature',
         status: 'in-progress',
         upvotes: 0,
-        createdAt: new Date()
+        createdAt: new Date().toLocaleDateString()
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ export const feedbacks: Feedback[] = [
         category: 'feature',
         status: 'planned',
         upvotes: 0,
-        createdAt: new Date()
+        createdAt: new Date().toLocaleDateString()
     },
     {
         id: 3,
@@ -38,7 +38,7 @@ export const feedbacks: Feedback[] = [
         category: 'bug',
         status: 'under-review',
         upvotes: 0,
-        createdAt: new Date()
+        createdAt: new Date().toLocaleDateString()
     },
     {
         id: 4,
@@ -48,7 +48,7 @@ export const feedbacks: Feedback[] = [
         category: 'feature',
         status: 'planned',
         upvotes: 0,
-        createdAt: new Date()
+        createdAt: new Date().toLocaleDateString()
     },
     {
         id: 5,
@@ -58,6 +58,6 @@ export const feedbacks: Feedback[] = [
         category: 'enhancement',
         status: 'shipped',
         upvotes: 0,
-        createdAt: new Date()
+        createdAt: new Date().toLocaleDateString()
     }
 ]
