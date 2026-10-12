@@ -6,9 +6,7 @@ import windowControlBtnsIcon from '@/public/window-control-btns.svg';
 import terminalIcon from '@/public/terminal-icon.svg';
 import terminalTickIcon from '@/public/terminal-tick-icon.svg';
 import FeatureCard from '@/components/FeatureCard';
-import featureIcon01 from '@/public/icon_01.svg'; 
-import featureIcon02 from '@/public/icon_02.svg'; 
-import featureIcon03 from '@/public/icon_03.svg'; 
+import { features } from '@/lib/data/features';
 import cummunityDrivenIcon from '@/public/cummunity-driven-icon.svg';
 import exploreFeedbackBtnArrow from '@/public/explore-feedback-btn-arrow.svg';
 
@@ -133,21 +131,16 @@ export default function Home() {
         <p className={`font-mono text-sm text-[#10F07A]`}>ZERO OVERHEAD</p>
         <p className={`font-bold text-3xl text-center md:text-4xl`}>Everything you need to ship fearlessly</p>
         <div className={`flex flex-col gap-4 mt-4 md:flex-row`}>
-          <FeatureCard 
-            icon={featureIcon01}
-            heading='Sub-Millisecond Tracing'
-            subheading='Hardware-accelerated ring buffers stream traces with less than 150µs CPU overhead.' 
-          />
-          <FeatureCard 
-            icon={featureIcon02}
-            heading='CLI-First Workflows'
-            subheading='One-liner instrumentation for Bun, Node, Go, Rust, and Python without invasive SDK code.'
-          />
-          <FeatureCard 
-            icon={featureIcon03}
-            heading='Deterministic Root Cause'
-            subheading='Correlates diffs, panic logs, and runtime metrics directly to offending PR lines.'
-          />
+          {
+            features.map(feature => 
+              <FeatureCard 
+                key={feature.id}
+                icon={feature.icon}
+                heading={feature.title}
+                subheading={feature.description}
+              />
+            )
+          }
         </div>
       </section>
 
