@@ -1,44 +1,60 @@
 import Image from 'next/image';
 import commentIcon from '@/public/comment-icon.svg';
 
+const STATUS_CONFIG = {
+    'submitted': {
+        label: 'Submitted',
+        className: 'bg-[#343537] text-[#BACBB9]'
+    }, 
+    'under-review': {
+        label: 'Under Review',
+        className: 'bg-[#343537] text-gray-300'
+    },
+    'planned': {
+        label: 'Planned',
+        className: 'bg-[#4CD7F6]/10 text-[#4CD7F6]'
+    },
+    'in-progress': {
+        label: 'In Progress',
+        className: 'bg-[#B4FFC0]/10 text-[#10F07A]'
+    },
+    'shipped': {
+        label: 'Shipped',
+        className: 'bg-[#343537] text-green-500'
+    }
+} as const;
+
+const CATEGORY_CONFIG = {
+    'feature': {
+        label: 'Feature',
+        className: 'bg-[#343537] text-[#4CD7F6]'
+    },
+    'bug': {
+        label: 'Bug',
+        className: 'bg-[#93000A] text-[#FFB4AB]'
+    },
+    'enhancement': {
+        label: 'Enhancement',
+        className: 'bg-[#F2EAFF]/10 text-[#D8C9FF]'
+    }
+} as const;
+
+type Status = keyof typeof STATUS_CONFIG;
+type Category = keyof typeof CATEGORY_CONFIG;
+
 export default function FeedbackCard(
     {title, description, userName, category, status, upvotes, createdAt}:{
         title: string, 
         description: string, 
         userName: string, 
-        category: string, 
-        status: string, 
+        category: Category,
+        status: Status, 
         upvotes: number, 
         createdAt: string
     }
 ) {
-    let statusText = ''
-    let statusTextColor = ''
-    let statusBgColor = ''
-    let categoryText = ''
-    let categoryBgColor = ''
-
-    if(status === 'submitted') {
-        statusText = 'Submitted'
-        statusTextColor = '#BACBB9'
-        statusBgColor = '#343537'
-    } else if (status === 'under-review') {
-        statusText = 'Under Review'
-        statusTextColor = 'smoke'
-        statusBgColor = '#343537'
-    } else if (status === 'planned') {
-        statusText = 'Planned'
-        statusTextColor = '#4CD7F6'
-        statusBgColor = 'rgba(76, 215, 246, 0.1)'
-    } else if (status === 'in-progress') {
-        statusText = 'In Progress'
-        statusTextColor = '#10F07A'
-        statusBgColor = 'rgba(180, 255, 192, 0.1)'
-    } else if (status === 'shipped') {
-        statusText = 'Shipped'
-        statusTextColor = 'green'
-        statusBgColor = '#343537'
-    }
+    const statusConfig = STATUS_CONFIG[status];
+    const categoryConfig = CATEGORY_CONFIG[category];
 
     return (
         <div className={`bg-[#1B1C1E] py-4 pl-24 pr-10 relative flex flex-col gap-3 rounded-lg`}>
@@ -47,13 +63,12 @@ export default function FeedbackCard(
                 {upvotes}
             </div>
             <div className={`font-mono text-sm flex gap-2`}>
-                <span className={`bg-[#343537] text-[#4CD7F6] px-2.5 py-1 rounded-md`}>
-                    {category}
+                <span className={`px-2.5 py-1 rounded-md ${categoryConfig.className}`}>
+                    {categoryConfig.label}
                 </span>
                 <span 
-                    style={{backgroundColor: statusBgColor, color: statusTextColor}} 
-                    className={`px-2.5 py-1 rounded-md`}>
-                    {statusText}
+                    className={`px-2.5 py-1 rounded-md ${statusConfig.className}`}>
+                    {statusConfig.label}
                 </span>
             </div>
             <div className={`flex flex-col gap-2`}>
