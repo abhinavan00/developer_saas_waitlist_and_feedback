@@ -4,7 +4,7 @@ type Feedback = {
     description: string,
     userName: string,
     category: 'bug' | 'feature' | 'enhancement',
-    status: 'Submitted' | 'under-review' | 'planned' | 'in-progress' | 'shipped',
+    status: 'submitted' | 'under-review' | 'planned' | 'in-progress' | 'shipped',
     upvotes: number,
     createdAt: string
 }
